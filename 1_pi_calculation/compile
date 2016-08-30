@@ -1,0 +1,4 @@
+#!/bin/bash
+gcc -fopenmp program.c -o out.o
+
+echo "Usage: $ ./out.o intervals num_threads"
