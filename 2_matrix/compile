@@ -1,0 +1,4 @@
+#!/bin/bash
+gcc -fopenmp matrix.c -o matrix.o
+
+echo "Usage: $ ./matrix.o input_size num_threads"

@@ -1,4 +1,4 @@
 #!/bin/bash
-gcc -fopenmp program.c -o out.o
+gcc -fopenmp pi_calculation.c -o pi_calculation.o
 
-echo "Usage: $ ./out.o intervals num_threads"
+echo "Usage: $ ./pi_calculation.o intervals num_threads"
