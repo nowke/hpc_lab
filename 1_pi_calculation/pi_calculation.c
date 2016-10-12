@@ -8,18 +8,18 @@
 int intervals, num_threads;
 
 double calculate_pi() {
-  double sum = 0.0;
-  double step = 1.0 / intervals;
-  double x;
-  int i;
+    double sum = 0.0;
+    double step = 1.0 / intervals;
+    double x;
+    int i;
 
-  #pragma omp parallel for private(x) reduction(+:sum)
-  for (i=1; i < intervals; i++) {
-      x = step * (i+0.5);
-      sum += 4.0 / (1.0 + x * x);
-  }
+    #pragma omp parallel for private(x) reduction(+:sum)
+    for (i=1; i < intervals; i++) {
+        x = step * (i+0.5);
+        sum += 4.0 / (1.0 + x * x);
+    }
 
-  return sum * step;
+    return sum * step;
 }
 
 int main(int argc, char const *argv[]) {
