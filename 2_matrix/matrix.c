@@ -3,45 +3,42 @@
 #include <omp.h>
 
 int matrix_size, num_threads;
-int **A, **B, **C;
+long **A, **B, **C;
 
 void allocate_matrix() {
   int i, j, num=0;
 
   // Allocate Memory
-  A = (int **) malloc(matrix_size * sizeof(int *));
-  B = (int **) malloc(matrix_size * sizeof(int *));
-  C = (int **) malloc(matrix_size * sizeof(int *));
+  A = (long **) malloc(matrix_size * sizeof(long *));
+  B = (long **) malloc(matrix_size * sizeof(long *));
+  C = (long **) malloc(matrix_size * sizeof(long *));
+
 
   for (i=0; i < matrix_size; i++) {
-    A[i] = (int *) malloc(matrix_size * sizeof(int));
-    B[i] = (int *) malloc(matrix_size * sizeof(int));
-    C[i] = (int *) malloc(matrix_size * sizeof(int));
+    A[i] = (long *) malloc(matrix_size * sizeof(long));
+    B[i] = (long *) malloc(matrix_size * sizeof(long));
+    C[i] = (long *) malloc(matrix_size * sizeof(long));
   }
 
   // Initialize with some values
   for (i=0; i < matrix_size; i++) {
     for (j=0; j < matrix_size; j++) {
-      A[i][j] = num++;
-      B[i][j] = num++;
+      A[i][j] = rand() % 10;
+      B[i][j] = rand() % 10;
     }
   }
 }
 
 void multiply_matrix() {
 
-  #pragma omp parallel
-  {
-    int i, j, k;
+  int i, j, k;
 
-    #pragma omp for
-    for (i=0; i < matrix_size; i++) {
-      for (j=0; j < matrix_size; j++) {
-        C[i][j] = 0;
-        for (k=0; k < matrix_size; k++) {
-          C[i][j] += B[i][k] * C[k][j];
-        }
-      }
+  #pragma omp parallel for private(j, k)
+  for (i=0; i < matrix_size; i++) {
+    for (j=0; j < matrix_size; j++) {
+      C[i][j] = 0;
+      for (k=0; k < matrix_size; k++)
+        C[i][j] += A[i][k] * B[k][j];
     }
   }
 }
@@ -51,7 +48,7 @@ int main(int argc, char const *argv[]) {
   matrix_size = atoi(argv[1]);
   num_threads = atoi(argv[2]);
 
-	omp_set_num_threads(num_threads);
+  omp_set_num_threads(num_threads);
   allocate_matrix();
 
   double T1 = omp_get_wtime();
