@@ -37,8 +37,9 @@ void multiply_matrix() {
     for (i=0; i < matrix_size; i++) {
         for (j=0; j < matrix_size; j++) {
             C[i][j] = 0;
-            for (k=0; k < matrix_size; k++)
-            C[i][j] += A[i][k] * B[k][j];
+            for (k=0; k < matrix_size; k++) {
+                C[i][j] += A[i][k] * B[k][j];
+            }
         }
     }
 }

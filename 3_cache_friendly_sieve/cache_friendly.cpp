@@ -14,8 +14,9 @@ double t;
 */
 long mark_multiples(bool prime[], long low, long multiple, long high) {
     long i;
-    for (i=low; i <= high; i += multiple)
-    prime[i] = false;
+    for (i=low; i <= high; i += multiple) {
+        prime[i] = false;
+    }
     return i;
 }
 
@@ -26,18 +27,20 @@ long mark_multiples(bool prime[], long low, long multiple, long high) {
 void SieveOfEratosthenes(long N) {
     // Create `bool` array 'prime[0..n]', Initialize all elements to `true`
     bool* prime = new bool[N+1];
-    for (long p=2; p<=N; p++)
-    prime[p] = true;
+    for (long p=2; p<=N; p++) {
+        prime[p] = true;
+    }
 
     double t1 = omp_get_wtime();
     for (long p=2; p*p <= N; p++) {
         // If prime[p] is not changed, then it is a prime
-        if (prime[p] == true)
-        mark_multiples(prime, p*2, p, N); // Update all multiples of p
+        if (prime[p] == true) {
+            mark_multiples(prime, p*2, p, N); // Update all multiples of p
+        }
     }
 
     double t2 = omp_get_wtime();
-    t = (t2-t1)*1000;
+    t = (t2-t1) * 1000;
 }
 
 /**
@@ -47,8 +50,9 @@ void SieveOfEratosthenes(long N) {
 void CacheSieve(long N) {
     // Create `bool` array 'prime[0..n]', Initialize all elements to `true`
     bool* prime = new bool[N+1];
-    for (long p=2; p<=N; p++)
-    prime[p] = true;
+    for (long p=2; p<=N; p++) {
+        prime[p] = true;
+    }
 
     long M = (long) sqrt((double) N);
     long* factor  = new long[M];
@@ -59,10 +63,11 @@ void CacheSieve(long N) {
 
     // Compute all primes smaller than or equal
     // to square root of `N` using simple sieve
-    for (long p=2; p <= M; p++)
-    if (prime[p] == true) {
-        striker[n_factor] = mark_multiples(prime, p*2, p, M);
-        factor[n_factor++] = p;
+    for (long p=2; p <= M; p++) {
+        if (prime[p] == true) {
+            striker[n_factor] = mark_multiples(prime, p*2, p, M);
+            factor[n_factor++] = p;
+        }
     }
 
     // Chop Sieve to Windows of Size `sqrt(n)`
@@ -70,12 +75,13 @@ void CacheSieve(long N) {
         long limit = min(window + M - 1, N); // Max value of window (and not exceed N)
 
         // Walk through the current window
-        for (long i=0; i < n_factor; i++)
-        striker[i] = mark_multiples(prime, striker[i], factor[i], limit);
+        for (long p=0; p < n_factor; p++) {
+            striker[p] = mark_multiples(prime, striker[p], factor[p], limit);
+        }
     }
 
     double t2 = omp_get_wtime();
-    t = (t2 - t1)*1000;
+    t = (t2 - t1) * 1000;
 }
 
 int main(int argc, char* argv[]) {

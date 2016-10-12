@@ -1,0 +1,4 @@
+#!/bin/bash
+g++ -fopenmp parallel_sieve.cpp -o parallel_sieve.o
+
+echo "Usage: $ ./parallel_sieve.o N num_threads"
