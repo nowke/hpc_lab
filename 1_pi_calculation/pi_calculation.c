@@ -8,19 +8,18 @@
 int intervals, num_threads;
 
 double calculate_pi() {
-  double totalsum = 0.0;
-  double h = 1.0 / intervals;
+  double sum = 0.0;
+  double step = 1.0 / intervals;
   double x;
   int i;
 
-  #pragma omp parallel for private(x) reduction(+:totalsum)
+  #pragma omp parallel for private(x) reduction(+:sum)
   for (i=1; i < intervals; i++) {
-      x = h * (i+0.5);
-      totalsum = totalsum + 4.0 / (1.0 + x * x);
+      x = step * (i+0.5);
+      sum += 4.0 / (1.0 + x * x);
   }
 
-  totalsum = totalsum * h;
-  return totalsum;
+  return sum * step;
 }
 
 int main(int argc, char const *argv[]) {
@@ -30,14 +29,14 @@ int main(int argc, char const *argv[]) {
 
     omp_set_num_threads(num_threads);
 
-    double T1 = omp_get_wtime();
-    double PI_RESULT = calculate_pi();
-    double T2 = omp_get_wtime();
+    double t1 = omp_get_wtime();
+    double pi_result = calculate_pi();
+    double t2 = omp_get_wtime();
 
     printf("\nActual PI: %1.15lf\n", PI);
-    printf("Calculated PI: %1.15lf\n", PI_RESULT);
-    printf("Error: %1.15lf\n", fabs(PI_RESULT - PI));
+    printf("Calculated PI: %1.15lf\n", pi_result);
+    printf("Error: %1.15lf\n", fabs(pi_result - PI));
 
-    printf("Time taken: %lf ms\n", (T2 - T1) * 1000);
+    printf("Time taken: %lf ms\n", (t2 - t1) * 1000);
     return 0;
 }
