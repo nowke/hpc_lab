@@ -69,6 +69,6 @@ Time taken: 25.794029 ms
 
 The following Integral evaluates to `PI`.
 
-![integral-for-pi](http://www.sciweavers.org/tex2img.php?eq=%5Cint_%7B0%7D%5E%7B1%7D%20%20%5Cfrac%7B4.0%7D%7B1%20%2B%20%20x%5E%7B2%7D%20%7D%20%20%5C%2C%20dx%20%3D%20%5Cpi&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+![integral_for_pi](integral.png "Integral for PI")
 
 We can approximate the value by evaluating the area under the curve of above Integral. More number of `INTERVALS`, more accurate the value of `PI`
