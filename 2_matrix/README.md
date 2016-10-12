@@ -1,5 +1,7 @@
 # Matrix Multiplication
 
+> OpenMP program that computes a simple matrix-matrix multiplication using dynamic memory allocation
+
 ### Compile
 
 Use the script `compile`
