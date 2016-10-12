@@ -1,0 +1,4 @@
+#!/bin/bash
+g++ -fopenmp cache_friendly.cpp -o cache_friendly.o
+
+echo "Usage: $ ./cache_friendly.o N"
