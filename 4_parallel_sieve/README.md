@@ -2,7 +2,7 @@
 
 > Program for Cache Friendly Sieve of Eratosthenes and Cache Friendly Parallel Sieve of Eratosthenes for enumerating prime numbers upto N
 
-### compile
+### Compile
 
 Use the script `compile`
 ```

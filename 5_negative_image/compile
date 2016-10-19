@@ -1,0 +1,6 @@
+#!/bin/bash
+gcc -fopenmp negative.c -o negative.o -lgd
+gcc -fopenmp negative_critical.c -o negative_critical.o -lgd
+
+echo "Usage: $ ./negative.o input.png output.png num_threads"
+echo "Usage: $ ./negative_critical.o input.png output.png num_threads"
