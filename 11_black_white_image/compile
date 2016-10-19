@@ -1,0 +1,10 @@
+#!/bin/bash
+gcc -fopenmp black_white.c -o black_white.o -lgd
+gcc -fopenmp black_white_static.c -o black_white_static.o -lgd
+gcc -fopenmp black_white_dynamic.c -o black_white_dynamic.o -lgd
+gcc -fopenmp black_white_guided.c -o black_white_guided.o -lgd
+
+echo "Usage: $ ./black_white.o input.png output.png"
+echo "Usage: $ ./black_white_static.o input.png output.png"
+echo "Usage: $ ./black_white_dynamic.o input.png output.png"
+echo "Usage: $ ./black_white_guided.o input.png output.png"

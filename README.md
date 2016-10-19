@@ -8,6 +8,9 @@
 6. Prime-Sine table
 7. Points Clustering
 8. [Word Search](8_word_search) ( [search.cpp](8_word_search/search.cpp) | [Results](8_word_search#run-summary) )
+9. Points Classification
+10. MPI Routines
+11. [Black & White Image](11_black_white_image) ( [black_white.c](11_black_white_image/black_white.c) | [black_white_static.c](11_black_white_image/black_white_static.c) | [black_white_dynamic.c](11_black_white_image/black_white_dynamic.c) | [black_white_guided.c](11_black_white_image/black_white_guided.c) | [Results](11_black_white_image#run-summary) )
 
 ## Resources
 * [Introduction to OpenMP - Tim Mattson (Intel) (27 Videos)](https://www.youtube.com/playlist?list=PLLX-Q6B8xqZ8n8bwjGdzBJ25X2utwnoEG)
