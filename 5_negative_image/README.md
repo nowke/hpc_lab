@@ -1,7 +1,7 @@
 # Negative Image
 
 > Program to find the negative of an image to demonstrate <br>
-> *a) Use default data scope variables * <br>
+> *a) Use default data scope variables* <br>
 > *b) Use Critical section to prove correctness using default data scope variables* <br><br>
 > **Input**: Image in `png` format<br>
 > **Output**: Negative of give Image
