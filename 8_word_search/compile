@@ -1,0 +1,4 @@
+#!/bin/bash
+g++ -fopenmp search.cpp -o search.o
+
+echo "Usage: $ ./search.o file_name num_threads"
