@@ -1,0 +1,4 @@
+#!/bin/bash
+g++ -fopenmp multitask.cpp -o multitask.o -lm
+
+echo "Usage: $ ./multitask.o upper_bound num_threads"

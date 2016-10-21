@@ -5,7 +5,7 @@
 3. [Sieve of Eratosthenes - Cache](3_cache_friendly_sieve) ( [cache_friendly.cpp](3_cache_friendly_sieve/cache_friendly.cpp) | [Results](3_cache_friendly_sieve#run-summary) )
 4. [Sieve of Eratosthenes - Parallel](4_parallel_sieve) ( [parallel_sieve.cpp](4_parallel_sieve/parallel_sieve.cpp) | [Results](4_parallel_sieve#run-summary) )
 5. [Negative Image](5_negative_image) ( [negative.c](5_negative_image/negative.c) | [negative_critical.c](5_negative_image/negative_critical.c) | [Results](5_negative_image#run-summary) )
-6. Prime-Sine table
+6. [Multitasking](6_multitasking) ( [multitasking.cpp](6_multitasking/multitasking.cpp) | [Results](6_multitasking#run-summary) )
 7. Points Clustering
 8. [Word Search](8_word_search) ( [search.cpp](8_word_search/search.cpp) | [Results](8_word_search#run-summary) )
 9. Points Classification
