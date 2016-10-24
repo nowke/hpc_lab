@@ -1,0 +1,4 @@
+#!/bin/bash
+mpicc -o mpi_routines.o mpi_routines.c
+
+echo "Usage: mpiexec mpi_routines.o"
