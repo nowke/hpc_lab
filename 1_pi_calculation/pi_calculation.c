@@ -15,7 +15,7 @@ double calculate_pi() {
 
     #pragma omp parallel for private(x) reduction(+:sum)
     for (i=1; i < intervals; i++) {
-        x = step * (i+0.5);
+        x = step * (i+0.5); // We take 0.5 as we are taking middle point of rectangular area
         sum += 4.0 / (1.0 + x * x);
     }
 
