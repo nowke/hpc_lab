@@ -1,0 +1,4 @@
+#!/bin/bash
+g++ -fopenmp points_clustering.cpp -o points_clustering.o -lm
+
+echo "Usage: $ ./points_clustering.o"
