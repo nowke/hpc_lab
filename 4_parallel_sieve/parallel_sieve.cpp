@@ -110,13 +110,13 @@ long ParallelSieve(long N) {
 
                 // Make Striker independent of previous values - Compute from base
                 for( long k=0; k < n_factor; k++ ) {
-					striker[k] = (base + factor[k] - 1) / factor[k] * factor[k] - base;
+                    striker[k] = (base + factor[k] - 1) / factor[k] * factor[k] - base;
                 }
             }
 
             long limit = min(window + M -1, N) - base;
             for( long k=0; k<n_factor; k++ ) {
-				striker[k] = mark_multiples(prime, striker[k], factor[k], limit) - M;
+                striker[k] = mark_multiples(prime, striker[k], factor[k], limit) - M;
             }
 
             for (long p=0; p <= limit; p++) {
