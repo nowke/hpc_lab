@@ -38,7 +38,7 @@ Hello World in process with rank 3 from Process with rank 0
 MPI primarily addresses the message-passing parallel programming model: data is moved from the address space of one process to that of another process through cooperative operations on each process.
 
 #### General MPI Program Structure
-![https://computing.llnl.gov/tutorials/mpi/images/prog_structure.gif](mpi)
+![https://computing.llnl.gov/tutorials/mpi/images/prog_structure.gif](https://computing.llnl.gov/tutorials/mpi/images/prog_structure.gif)
 
 #### Header File
 Required for all programs that make MPI library calls.
