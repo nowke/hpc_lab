@@ -1,0 +1,4 @@
+#!/bin/bash
+mpicc -o pi_calculation.o pi_calculation.c
+
+echo "Usage: mpirun -np <num_processes> pi_calculation.o"
