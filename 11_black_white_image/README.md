@@ -86,3 +86,44 @@ Time Taken: 8.740ms
     <td>67.851</td>
   </tr>
 </table>
+
+> Image Size = `1366x768`
+
+<table>
+  <tr>
+    <th></th>
+    <th colspan="4"><center>Scheduling Techniques (Time in ms)</center></th>
+  </tr>
+  <tr>
+    <th rowspan="2">Chunk Size</th>
+  </tr>
+  <tr align="right">
+    <td>Static</td>
+    <td>Dynamic</td>
+    <td>Guided</td>
+  </tr>
+  <tr align="right">
+    <td>25</td>
+    <td>10.003</td>
+    <td>10.28</td>
+    <td>10.231</td>
+  </tr>
+  <tr align="right">
+    <td>50</td>
+    <td>11.00</td>
+    <td>9.69</td>
+    <td>9.252</td>
+  </tr>
+  <tr align="right">
+    <td>100</td>
+    <td>9.964</td>
+    <td>10.467</td>
+    <td>11.831</td>
+  </tr>
+  <tr align="right">
+    <td>200</td>
+    <td>10.181</td>
+    <td>11.271</td>
+    <td>9.652</td>
+  </tr>
+</table>
