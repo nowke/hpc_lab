@@ -10,7 +10,7 @@ using namespace std;
 
 int num_threads;
 long num_points;
-long** points; // 2D array points[x][0] -> point location, points[x][1] -> distance from cluster mean
+long** points; // 2D array points[x][0] -> point location, points[x][1] -> index of cluster to which point belongs to
 double cluster_mean[K]; // Holds mean value for each cluster (Total K)
 long cluster_count[K]; // Number of points in each cluster (Total K)
 

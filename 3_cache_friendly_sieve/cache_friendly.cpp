@@ -8,7 +8,7 @@ using namespace std;
 double t;
 
 /**
-* Marks all multiples of `multiple` from `low*2` till `high`
+* Marks all multiples of `multiple` from `low` till `high`
 *
 * eg: If low=4, high=15, multiple=2 => marks 4, 6, 8, 10, 12, 14 as `false`
 */

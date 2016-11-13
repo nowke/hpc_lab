@@ -51,10 +51,10 @@ int main(int argc, char* argv[]) {
         for (int i=N - N_per_process; i < N; i++) {
             C[i] = A[i] + B[i];
         }
-        for (i=0; i<N; i++) {
-            printf("%d, ", C[i]);
-        }
-        printf("\n");
+        // for (i=0; i<N; i++) {
+        //     printf("%d, ", C[i]);
+        // }
+        // printf("\n");
     } else {
         AP = (int *) malloc(sizeof(int) * N_per_process);
         BP = (int *) malloc(sizeof(int) * N_per_process);
