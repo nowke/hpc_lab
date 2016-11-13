@@ -10,7 +10,7 @@
 6. [Multitasking](6_multitasking) ( [multitask.cpp](6_multitasking/multitask.cpp) | [Results](6_multitasking#run-summary) )
 7. [Points Clustering](7_points_clustering) ( [points_clustering.cpp](7_points_clustering/points_clustering.cpp) | [Results](7_points_clustering#run-summary) )
 8. [Word Search](8_word_search) ( [search.cpp](8_word_search/search.cpp) | [Results](8_word_search#run-summary) )
-9. [Points Classification](9_points_classification) ( [points_classification.cpp](9_points_classification/points_classification.cp) | [Results](9_points_classification#run-summary) )
+9. [Points Classification](9_points_classification) ( [points_classification.cpp](9_points_classification/points_classification.cpp) | [Results](9_points_classification#run-summary) )
 10. [MPI Routines](10_mpi_routines) ( [mpi_routines.c](10_mpi_routines/mpi_routines.c) )
 11. [Black & White Image](11_black_white_image) ( [black_white.c](11_black_white_image/black_white.c) | [black_white_static.c](11_black_white_image/black_white_static.c) | [black_white_dynamic.c](11_black_white_image/black_white_dynamic.c) | [black_white_guided.c](11_black_white_image/black_white_guided.c) | [Results](11_black_white_image#run-summary) )
 
