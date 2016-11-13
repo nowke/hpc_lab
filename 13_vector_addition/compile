@@ -1,0 +1,4 @@
+#!/bin/bash
+mpicc -o vector_addition.o vector_addition.c
+
+echo "Usage: mpirun -np <num_processes> vector_addition.o"
