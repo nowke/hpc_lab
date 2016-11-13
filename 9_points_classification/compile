@@ -1,0 +1,4 @@
+#!/bin/bash
+g++ -fopenmp points_classification.cpp -o points_classification.o -lm
+
+echo "Usage: $ ./points_classification.o num_points num_threads"
