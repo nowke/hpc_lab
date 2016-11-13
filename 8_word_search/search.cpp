@@ -11,7 +11,7 @@ int count[10];
 int word_count(string file_name, string word) {
     int count = 0;
     string ch;
-    ifstream input_file(file_name);
+    ifstream input_file(file_name.c_str());
 
     while (input_file) {
         input_file >> ch;
