@@ -4,6 +4,8 @@
 #include <string.h>
 #define BUFFER_SIZE 32
 
+char* messages[3] = {"Hello World", "Hello CSE", "Hello MPI"};
+
 int main(int argc, char *argv[]) {
     int rank, processors, desination;
     int tag=0, root=0, temp=1;
@@ -19,15 +21,15 @@ int main(int argc, char *argv[]) {
 
     if (rank == 0) {
         system("hostname");
-        strcpy(message, "Hello World");
+
         // Send to all processsors
         for (temp=1; temp<processors; temp++) {
+            strcpy(message, messages[(temp-1) % 3]);
             MPI_Send(message, BUFFER_SIZE, MPI_CHAR, temp, tag, MPI_COMM_WORLD);
         }
     } else {
-        system("hostname");
         MPI_Recv(message, BUFFER_SIZE, MPI_CHAR, root, tag, MPI_COMM_WORLD, &status);
-        printf("\n%s in process with rank %d from Process with rank %d\n", message, rank, root);
+        printf("%s in process with rank %d from Process with rank %d\n", message, rank, root);
     }
 
     MPI_Finalize();

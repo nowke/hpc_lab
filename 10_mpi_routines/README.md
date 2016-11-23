@@ -19,15 +19,9 @@ $ mpicc -o mpi_routines.o mpi_routines.c
 ```
 $ mpirun -np 4 mpi_routines.o
 nowke-air.local
-nowke-air.local
-nowke-air.local
-nowke-air.local
-
+Hello CSE in process with rank 2 from Process with rank 0
+Hello MPI in process with rank 3 from Process with rank 0
 Hello World in process with rank 1 from Process with rank 0
-
-Hello World in process with rank 2 from Process with rank 0
-
-Hello World in process with rank 3 from Process with rank 0
 ```
 
 ### MPI Quick Overview
