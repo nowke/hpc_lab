@@ -17,19 +17,14 @@ int main(int argc, char *argv[]) {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank); // Rank (or Task ID) is stored in `rank`
     MPI_Comm_size(MPI_COMM_WORLD, &processors); // Communicator size = No.of Processors
 
-    // Task 0 (Rank = 0) sends message `Hello World` to all the other processors
-
     if (rank == 0) {
-        system("hostname");
-
-        // Send to all processsors
-        for (temp=1; temp<processors; temp++) {
-            strcpy(message, messages[(temp-1) % 3]);
-            MPI_Send(message, BUFFER_SIZE, MPI_CHAR, temp, tag, MPI_COMM_WORLD);
+        for (temp = 1; temp<processors; temp++) {
+            MPI_Recv(message, BUFFER_SIZE, MPI_CHAR, temp, tag, MPI_COMM_WORLD, &status);
+            printf("%s in process with rank 0 from Process with rank %d\n", message, temp);
         }
     } else {
-        MPI_Recv(message, BUFFER_SIZE, MPI_CHAR, root, tag, MPI_COMM_WORLD, &status);
-        printf("%s in process with rank %d from Process with rank %d\n", message, rank, root);
+        strcpy(message, messages[(rank-1) % 3]);
+        MPI_Send(message, BUFFER_SIZE, MPI_CHAR, 0, tag, MPI_COMM_WORLD);
     }
 
     MPI_Finalize();
