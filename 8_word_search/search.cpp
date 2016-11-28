@@ -2,11 +2,24 @@
 #include <fstream>
 #include <omp.h>
 #include <string>
+#include <locale>
 
 using namespace std;
 
-string words[10] = {"the", "around", "graphics", "from", "by", "be", "any", "mount", "hello", "word"};
+string words[10] = {"the", "around", "grAphics", "from", "by", "be", "any", "mount", "HeLlo", "word"};
 int count[10];
+
+bool icompare_pred(unsigned char a, unsigned char b) {
+    return tolower(a) == tolower(b);
+}
+
+bool icompare(string a, string b)
+{
+    if (a.length()==b.length())
+        return equal(a.begin(), a.end(), b.begin(), icompare_pred);
+
+    return false;
+}
 
 int word_count(string file_name, string word) {
     int count = 0;
@@ -15,7 +28,7 @@ int word_count(string file_name, string word) {
 
     while (input_file) {
         input_file >> ch;
-        if (ch == word)
+        if (icompare(ch, word))
             count++;
     }
     input_file.close();
